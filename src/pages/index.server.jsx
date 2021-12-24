@@ -75,6 +75,9 @@ export default function Index({country = {isoCode: 'US'}}) {
     },
   });
 
+  // new graphql data .
+  // console.log(data.shop.name);
+
   const collections = data ? flattenConnection(data.collections) : [];
   const featuredProductsCollection = collections[0];
   const featuredProducts = featuredProductsCollection
@@ -161,6 +164,9 @@ const QUERY = gql`
           }
         }
       }
+    }
+    shop {
+      name
     }
   }
 
